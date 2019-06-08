@@ -13,7 +13,7 @@ public class cubeMatrix : MonoBehaviour
     {
         x = Random.Range(5, 8);
         y = Random.Range(5, 8);
-        z = Random.Range(5, 8);
+        z = Random.Range(10, 15);
 
 		x = x + xStart;
 		z = z + zStart;
@@ -24,10 +24,18 @@ public class cubeMatrix : MonoBehaviour
             {
 				for (int k = zStart; k < z; k++)
                 {
-
-                    Instantiate(cube, new Vector3(i, j, k), Quaternion.identity);
-                    count++;
-                    Debug.Log(count + "cubes");
+                    if (Random.Range(0f, 10f) > 5f)
+                    {
+                        GameObject newCube = Instantiate(cube, new Vector3(i, j, k), Quaternion.identity);
+                        newCube.GetComponent<Renderer>().material.color = new Color(
+                        Random.Range(0f, 1f),
+                        Random.Range(0f, 1f),
+                        Random.Range(0f, 1f)
+                        );
+                        count++;
+                        Debug.Log(count + "cubes");
+                    }
+                   
                 }
             }
         }
