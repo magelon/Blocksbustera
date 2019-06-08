@@ -52,7 +52,7 @@ public class HoleMovement : MonoBehaviour
 
             if (Input.GetMouseButton(0)&&canMove)
             {
-                Debug.Log("moving");
+                //Debug.Log("moving");
                 offsetX = Camera.main.ScreenToWorldPoint(mousePos).x - lmp.x;
                 offsetY = Camera.main.ScreenToWorldPoint(mousePos).y - lmp.y;
 

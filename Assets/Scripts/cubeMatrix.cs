@@ -7,7 +7,7 @@ public class cubeMatrix : MonoBehaviour
     int x, y, z;
     public GameObject cube;
 	public int xStart,zStart;
-    int count;
+    public int count;
 
     void Start()
     {
@@ -33,7 +33,7 @@ public class cubeMatrix : MonoBehaviour
                         Random.Range(0f, 1f)
                         );
                         count++;
-                        Debug.Log(count + "cubes");
+                        //Debug.Log(count + "cubes");
                     }
                    
                 }
@@ -42,9 +42,4 @@ public class cubeMatrix : MonoBehaviour
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
