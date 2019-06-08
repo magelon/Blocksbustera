@@ -6,6 +6,8 @@ public class cubeMatrix : MonoBehaviour
 {
     int x, y, z;
     public GameObject cube;
+	public int xStart,zStart;
+    int count;
 
     void Start()
     {
@@ -13,14 +15,19 @@ public class cubeMatrix : MonoBehaviour
         y = Random.Range(5, 8);
         z = Random.Range(5, 8);
 
-        for (int i = 0; i < x; i++)
+		x = x + xStart;
+		z = z + zStart;
+
+		for (int i = xStart; i < x; i++)
         {
             for (int j = 0; j < y; j++)
             {
-                for (int k = 0; k < z; k++)
+				for (int k = zStart; k < z; k++)
                 {
 
                     Instantiate(cube, new Vector3(i, j, k), Quaternion.identity);
+                    count++;
+                    Debug.Log(count + "cubes");
                 }
             }
         }
